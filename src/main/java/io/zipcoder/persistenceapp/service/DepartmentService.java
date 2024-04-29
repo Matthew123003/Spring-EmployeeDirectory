@@ -32,4 +32,9 @@ public class DepartmentService {
         originalDepartment.setManager(newDeptData.getManager());
         return departmentRepo.save(originalDepartment);
     }
+
+    public Boolean delete(Long id){
+        departmentRepo.delete(id);
+        return true;
+    }
 }

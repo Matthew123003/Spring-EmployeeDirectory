@@ -2,7 +2,6 @@ package io.zipcoder.persistenceapp.service;
 
 import io.zipcoder.persistenceapp.model.Employee;
 import io.zipcoder.persistenceapp.repository.EmployeeRepo;
-import io.zipcoder.persistenceapp.repository.EmployeeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,8 +22,8 @@ public class EmployeeService {
         return employeeRepo.findOne(id);
     }
 
-    public Employee create(Employee department){
-        return employeeRepo.save(department);
+    public Employee create(Employee employee){
+        return employeeRepo.save(employee);
     }
 
     public Employee update(Long id, Employee newEmployeeData){
@@ -36,5 +35,10 @@ public class EmployeeService {
         originalEmployee.setManager(newEmployeeData.getManager());
         originalEmployee.setDptNum(newEmployeeData.getDptNum());
         return employeeRepo.save(originalEmployee);
+    }
+
+    public Boolean delete(Long id){
+        employeeRepo.delete(id);
+        return true;
     }
 }
