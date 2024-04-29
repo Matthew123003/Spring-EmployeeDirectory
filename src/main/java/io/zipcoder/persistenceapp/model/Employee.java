@@ -14,14 +14,15 @@ public class Employee {
     private String phoneNumber;
     private Date hireDate;
     private String manager;
-    @ManyToOne
-    @JoinColumn(name = "dptNum")
     private Long dptNum;
+
+    @OneToOne(mappedBy = "manager")
+    private Department department;
 
     public Employee() {
     }
 
-    public Employee(Long employeeNumber, String firstName, String lastName, String title, String phoneNumber, Date hireDate, String manager, Long dptNum) {
+    public Employee(Long employeeNumber, String firstName, String lastName, String title, String phoneNumber, Date hireDate, String manager, Long dptNum, Department department) {
         this.employeeNumber = employeeNumber;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -30,6 +31,7 @@ public class Employee {
         this.hireDate = hireDate;
         this.manager = manager;
         this.dptNum = dptNum;
+        this.department = department;
     }
 
     public Long getEmployeeNumber() {
@@ -94,5 +96,13 @@ public class Employee {
 
     public void setDptNum(Long dptNum) {
         this.dptNum = dptNum;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 }

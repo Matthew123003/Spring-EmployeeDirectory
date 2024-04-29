@@ -10,7 +10,7 @@ public class Department {
 
     private String dptName;
     @OneToOne
-    @JoinColumn(name = "employeeNumber")
+    @JoinColumn(name = "manager_id")
     private Employee manager;
 
     public Department() {
