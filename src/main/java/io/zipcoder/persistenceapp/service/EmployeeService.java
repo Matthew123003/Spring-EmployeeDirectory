@@ -34,6 +34,7 @@ public class EmployeeService {
         originalEmployee.setPhoneNumber(newEmployeeData.getPhoneNumber());
         originalEmployee.setManager(newEmployeeData.getManager());
         originalEmployee.setDptNum(newEmployeeData.getDptNum());
+        originalEmployee.setHireDate(newEmployeeData.getHireDate());
         return employeeRepo.save(originalEmployee);
     }
 
