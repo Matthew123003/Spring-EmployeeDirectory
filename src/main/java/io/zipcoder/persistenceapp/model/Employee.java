@@ -1,23 +1,28 @@
 package io.zipcoder.persistenceapp.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
 public class Employee {
-    private Integer employeeNumber;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long employeeNumber;
     private String firstName;
     private String lastName;
     private String title;
     private String phoneNumber;
     private Date hireDate;
     private String manager;
-    private Integer dptNum;
+    private Long dptNum;
 
     public Employee() {
     }
 
-    public Employee(Integer employeeNumber, String firstName, String lastName, String title, String phoneNumber, Date hireDate, String manager, Integer dptNum) {
+    public Employee(Long employeeNumber, String firstName, String lastName, String title, String phoneNumber, Date hireDate, String manager, Long dptNum) {
         this.employeeNumber = employeeNumber;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -28,11 +33,11 @@ public class Employee {
         this.dptNum = dptNum;
     }
 
-    public Integer getEmployeeNumber() {
+    public Long getEmployeeNumber() {
         return employeeNumber;
     }
 
-    public void setEmployeeNumber(Integer employeeNumber) {
+    public void setEmployeeNumber(Long employeeNumber) {
         this.employeeNumber = employeeNumber;
     }
 
@@ -84,11 +89,11 @@ public class Employee {
         this.manager = manager;
     }
 
-    public Integer getDptNum() {
+    public Long getDptNum() {
         return dptNum;
     }
 
-    public void setDptNum(Integer dptNum) {
+    public void setDptNum(Long dptNum) {
         this.dptNum = dptNum;
     }
 }

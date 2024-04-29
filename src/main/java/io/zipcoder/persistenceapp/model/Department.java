@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 @Entity
 public class Department {
 
-    private Integer dptNum;
+    private Long dptNum;
 
     private String dptName;
     private Employee manager;
@@ -13,17 +13,17 @@ public class Department {
     public Department() {
     }
 
-    public Department(Integer dptNum, String dptName, Employee manager) {
+    public Department(Long dptNum, String dptName, Employee manager) {
         this.dptNum = dptNum;
         this.dptName = dptName;
         this.manager = manager;
     }
 
-    public Integer getDptNum() {
+    public Long getDptNum() {
         return dptNum;
     }
 
-    public void setDptNum(Integer dptNum) {
+    public void setDptNum(Long dptNum) {
         this.dptNum = dptNum;
     }
 
