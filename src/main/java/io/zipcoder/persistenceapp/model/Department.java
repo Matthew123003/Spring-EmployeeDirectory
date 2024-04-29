@@ -1,13 +1,16 @@
 package io.zipcoder.persistenceapp.model;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity
 public class Department {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long dptNum;
 
     private String dptName;
+    @OneToOne
+    @JoinColumn(name = "employeeNumber")
     private Employee manager;
 
     public Department() {
